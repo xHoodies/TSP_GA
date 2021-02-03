@@ -3,6 +3,7 @@ import random
 import operator
 import pandas as pd
 import matplotlib.pyplot as plt
+import time
 
 """
 Gene: a city (represented as (x,y) coordinates)
@@ -223,7 +224,7 @@ cityList = []
 for i in range(0,25):
     cityList.append(City(x=int(random.random() * 200), y=int(random.random() * 200)))
 
-
+start_time = time.time()
 # Run the GA with the following parameters
 geneticAlgorithmPlot(population=cityList, popSize=100, eliteSize=20, mutationRate=0.01, generations=500)
-
+print("--- %s seconds ---" % (time.time() - start_time))
